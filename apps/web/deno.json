@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json",
+  "imports": {
+    "~/": "./src/"
+  },
+  "tasks": {
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
+    "version": "vinxi version"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "solid-js",
+    "allowJs": true,
+    "strict": true,
+    "types": ["vinxi/types/client"]
+  }
+}
