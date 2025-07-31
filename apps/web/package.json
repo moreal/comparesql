@@ -9,5 +9,9 @@
     "@solidjs/start": "^1.1.0",
     "solid-js": "^1.9.5",
     "vinxi": "^0.5.7"
+  },
+  "devDependencies": {
+    "@deno/vite-plugin": "^1.0.5",
+    "vite-plugin-wasm": "^3.5.0"
   }
 }

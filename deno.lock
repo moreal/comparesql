@@ -1,12 +1,14 @@
 {
   "version": "5",
   "specifiers": {
+    "npm:@deno/vite-plugin@^1.0.5": "1.0.5_vite@6.3.5__picomatch@4.0.3",
     "npm:@solidjs/meta@~0.29.4": "0.29.4_solid-js@1.9.7__seroval@1.3.2",
     "npm:@solidjs/router@0.15": "0.15.3_solid-js@1.9.7__seroval@1.3.2",
     "npm:@solidjs/start@^1.1.0": "1.1.7_vinxi@0.5.8__@babel+core@7.28.0_seroval@1.3.2_solid-js@1.9.7__seroval@1.3.2",
     "npm:gluesql@0.17": "0.17.0",
     "npm:solid-js@^1.9.5": "1.9.7_seroval@1.3.2",
-    "npm:vinxi@~0.5.7": "0.5.8_@babel+core@7.28.0"
+    "npm:vinxi@~0.5.7": "0.5.8_@babel+core@7.28.0",
+    "npm:vite-plugin-wasm@^3.5.0": "3.5.0_vite@6.3.5__picomatch@4.0.3"
   },
   "npm": {
     "@ampproject/remapping@2.3.0": {
@@ -277,6 +279,12 @@
       "dependencies": [
         "@deno/shim-deno-test",
         "which@4.0.0"
+      ]
+    },
+    "@deno/vite-plugin@1.0.5_vite@6.3.5__picomatch@4.0.3": {
+      "integrity": "sha512-tLja5n4dyMhcze1NzvSs2iiriBymfBlDCZIrjMTxb9O2ru0gvmV6mn5oBD2teNw5Sd92cj3YJzKwsAs8tMJXlg==",
+      "dependencies": [
+        "vite"
       ]
     },
     "@dependents/detective-less@5.0.1": {
@@ -4343,6 +4351,12 @@
         "vitefu"
       ]
     },
+    "vite-plugin-wasm@3.5.0_vite@6.3.5__picomatch@4.0.3": {
+      "integrity": "sha512-X5VWgCnqiQEGb+omhlBVsvTfxikKtoOgAzQ95+BZ8gQ+VfMHIjSHr0wyvXFQCa0eKQ0fKyaL0kWcEnYqBac4lQ==",
+      "dependencies": [
+        "vite"
+      ]
+    },
     "vite@6.3.5_picomatch@4.0.3": {
       "integrity": "sha512-cZn6NDFE7wdTpINgs++ZJ4N49W2vRp8LCKrn3Ob1kYNtOo21vfDoaV5GzBfLU4MovSAB8uNRm4jgzVQZ+mBzPQ==",
       "dependencies": [
@@ -4537,11 +4551,13 @@
       "apps/web": {
         "packageJson": {
           "dependencies": [
+            "npm:@deno/vite-plugin@^1.0.5",
             "npm:@solidjs/meta@~0.29.4",
             "npm:@solidjs/router@0.15",
             "npm:@solidjs/start@^1.1.0",
             "npm:solid-js@^1.9.5",
-            "npm:vinxi@~0.5.7"
+            "npm:vinxi@~0.5.7",
+            "npm:vite-plugin-wasm@^3.5.0"
           ]
         }
       }
