@@ -15,7 +15,7 @@ export async function executeSqlite(sql: string): Promise<string> {
 }
 
 export async function executePostgres(sql: string): Promise<string> {
-  const executor = new PostgresExecutor("psql-17");
+  const executor = new PostgresExecutor();
   return await executor.execute(sql);
 }
 
