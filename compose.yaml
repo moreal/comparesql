@@ -1,0 +1,26 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: comparesql_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: testpassword
+
+  postgresql:
+    image: postgres:15
+    container_name: comparesql_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: testdb
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: testpassword
+
+  sqlite:
+    image: nouchka/sqlite3:latest
+    container_name: comparesql_sqlite
+    restart: unless-stopped
+    working_dir: /
+    command: tail -f /dev/null
