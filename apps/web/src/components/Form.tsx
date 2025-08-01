@@ -28,7 +28,7 @@ export function Form(props: FormProps) {
         rows={8}
         placeholder="Enter SQL query... (Ctrl+Enter to submit)"
         style={{
-          width: "100%",
+          width: "80rem",
           "font-family": "monospace",
           "font-size": "14px",
           resize: "vertical",
