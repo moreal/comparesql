@@ -36,6 +36,8 @@ function renderResult(result: GlueSQLExecutionResult): string {
     ].join("\n");
   } else if (result.type === "CREATE TABLE") {
     return "Table created successfully";
+  } else if (result.type === "DROP TABLE") {
+    return `Table dropped successfully (affected: ${result.affected})`;
   } else if (result.type === "INSERT") {
     return `Inserted ${result.affected} rows`;
   } else {
@@ -48,6 +50,9 @@ type GlueSQLExecutionResult = {
   type: "SELECT";
 } | {
   type: "CREATE TABLE";
+} | {
+  type: "DROP TABLE";
+  affected: number;
 } | {
   affected: number;
   type: "INSERT";
