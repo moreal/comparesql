@@ -5,8 +5,12 @@ export function SqlResultViewContainer(props: { children: JSX.Element }) {
     <div
       style={{
         border: "1px solid #ccc",
-        padding: "10px",
+        padding: "1rem",
         "border-radius": "5px",
+        "min-width": "30rem",
+        "display": "flex",
+        "flex-direction": "column",
+        "gap": "1.5rem",
       }}
     >
       {props.children}

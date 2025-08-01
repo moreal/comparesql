@@ -7,11 +7,27 @@ export default function Home() {
   const [sql, setSql] = createSignal<string>("");
 
   return (
-    <main>
-      <Form setter={setSql} />
-      <Show when={sql()}>
-        {(sql) => <ExecutionResult sql={sql()} />}
-      </Show>
-    </main>
+    <div
+      style={{
+        display: "flex",
+        "flex-direction": "column",
+        padding: "3rem",
+      }}
+    >
+      <main
+        style={{
+          display: "flex",
+          "flex-direction": "column",
+          "justify-content": "center",
+          "align-items": "center",
+          gap: "1rem",
+        }}
+      >
+        <Form setter={setSql} />
+        <Show when={sql()}>
+          {(sql) => <ExecutionResult sql={sql()} />}
+        </Show>
+      </main>
+    </div>
   );
 }

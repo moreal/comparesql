@@ -35,7 +35,13 @@ export function ExecutorComponent(
 
   return (
     <SqlResultViewContainer>
-      <p>{props.name}</p>
+      <span
+        style={{
+          "font-weight": "bold",
+        }}
+      >
+        {props.name}
+      </span>
       <Show when={result()}>
         {(result) => <SqlResultView result={result()} />}
       </Show>
