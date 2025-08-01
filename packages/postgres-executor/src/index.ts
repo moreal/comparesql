@@ -44,8 +44,7 @@ export class PostgresExecutor implements Executor {
     const lines = stdout.split("\n");
     const filteredLines = lines.filter((line) =>
       !line.includes("START TRANSACTION") &&
-      !line.includes("ROLLBACK") &&
-      line.trim() !== ""
+      !line.includes("ROLLBACK")
     );
 
     return filteredLines.join("\n").trim();

@@ -49,8 +49,7 @@ export class MySQLExecutor implements Executor {
     const filteredLines = lines.filter((line) =>
       !line.includes("mysql: [Warning]") &&
       !line.includes("START TRANSACTION") &&
-      !line.includes("ROLLBACK") &&
-      line.trim() !== ""
+      !line.includes("ROLLBACK")
     );
 
     return filteredLines.join("\n").trim();
