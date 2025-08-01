@@ -19,7 +19,7 @@ services:
       POSTGRES_PASSWORD: testpassword
 
   sqlite:
-    image: nouchka/sqlite3:latest
+    image: alpine/sqlite:latest
     container_name: comparesql_sqlite
     restart: unless-stopped
     working_dir: /
