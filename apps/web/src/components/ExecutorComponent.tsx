@@ -1,4 +1,4 @@
-import { createResource } from "solid-js";
+import { createResource, ErrorBoundary } from "solid-js";
 import { Show } from "solid-js/web";
 import { SqlResultViewContainer } from "./SqlResultViewContainer.tsx";
 import { SqlResultView } from "./SqlResultView.tsx";
@@ -45,9 +45,11 @@ export function ExecutorComponent(
       >
         {props.name}
       </span>
-      <Show when={result()}>
-        {(result) => <SqlResultView result={result()} />}
-      </Show>
+      <ErrorBoundary fallback={(err) => <div>Error: {err.message}</div>}>
+        <Show when={result()}>
+          {(result) => <SqlResultView result={result()} />}
+        </Show>
+      </ErrorBoundary>
     </SqlResultViewContainer>
   );
 }
