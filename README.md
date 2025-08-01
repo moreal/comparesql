@@ -3,6 +3,8 @@
 It is a tool to compare SQL query execution result between several SQL execution
 engines.
 
+![Screenshot](./docs/assets/screenshot.png)
+
 ## Commands
 
 ```bash
