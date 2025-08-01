@@ -23,4 +23,4 @@ services:
     container_name: comparesql_sqlite
     restart: unless-stopped
     working_dir: /
-    command: tail -f /dev/null
+    entrypoint: ["sleep", "infinity"]
