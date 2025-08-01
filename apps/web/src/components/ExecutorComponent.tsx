@@ -1,29 +1,37 @@
-import { Executor } from "@comparesql/executor";
-import { Component, createResource } from "solid-js";
+import { createResource } from "solid-js";
 import { Show } from "solid-js/web";
 import { SqlResultViewContainer } from "./SqlResultViewContainer.tsx";
+import { SqlResultView } from "./SqlResultView.tsx";
+import { executeGlueSQL, executeSqlite } from "../executors.ts";
+import type { ExecutorType } from "./ExecutionResult.tsx";
 
-type ExecutorComponentProps<TResult> = {
+type ExecutorComponentProps = {
   sql: string;
-  name: string;
-  executor: Executor<TResult>;
-  resultViewComponent: Component<{
-    result: TResult;
-  }>;
+  name: ExecutorType;
 };
 
-export function ExecutorComponent<TResult>(
-  props: ExecutorComponentProps<TResult>,
+export function ExecutorComponent(
+  props: ExecutorComponentProps,
 ) {
-  const [result] = createResource(async () => {
-    return await props.executor.execute(props.sql);
-  });
+  const [result] = createResource(
+    () => [props.sql, props.name],
+    async ([sql, name]) => {
+      switch (name) {
+        case "GlueSQL":
+          return await executeGlueSQL(sql);
+        case "SQLite":
+          return await executeSqlite(sql);
+        default:
+          throw new Error(`Unknown executor: ${name}`);
+      }
+    },
+  );
 
   return (
     <SqlResultViewContainer>
       <p>{props.name}</p>
       <Show when={result()}>
-        {(result) => <props.resultViewComponent result={result()} />}
+        {(result) => <SqlResultView result={result()} />}
       </Show>
     </SqlResultViewContainer>
   );

@@ -1,6 +1,7 @@
 # comparesql
 
-It is a tool to compare SQL query execution result between several SQL execution engines.
+It is a tool to compare SQL query execution result between several SQL execution
+engines.
 
 ## Commands
 

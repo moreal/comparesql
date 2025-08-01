@@ -1,3 +1,3 @@
-export interface Executor<T = string> {
-  execute(sql: string): Promise<T>;
+export interface Executor {
+  execute(sql: string): Promise<string>;
 }

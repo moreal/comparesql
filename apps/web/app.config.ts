@@ -8,5 +8,11 @@ export default defineConfig({
     optimizeDeps: {
       exclude: ["gluesql"],
     },
+    ssr: {
+      noExternal: [
+        "@comparesql/gluesql-executor",
+        "@comparesql/sqlite-executor",
+      ],
+    },
   }),
 });
