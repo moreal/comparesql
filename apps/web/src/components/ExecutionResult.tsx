@@ -1,7 +1,7 @@
 import { For } from "solid-js";
 import { ExecutorComponent } from "./ExecutorComponent.tsx";
 
-export type ExecutorType = "GlueSQL" | "SQLite";
+export type ExecutorType = "GlueSQL" | "SQLite" | "Postgres";
 
 export type ExecutorData = {
   name: ExecutorType;
@@ -18,6 +18,9 @@ export function ExecutionResult(props: ExecutionListProps) {
     },
     {
       name: "SQLite",
+    },
+    {
+      name: "Postgres",
     },
   ];
 

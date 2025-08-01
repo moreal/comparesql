@@ -2,7 +2,11 @@ import { createResource } from "solid-js";
 import { Show } from "solid-js/web";
 import { SqlResultViewContainer } from "./SqlResultViewContainer.tsx";
 import { SqlResultView } from "./SqlResultView.tsx";
-import { executeGlueSQL, executeSqlite } from "../executors.ts";
+import {
+  executeGlueSQL,
+  executePostgres,
+  executeSqlite,
+} from "../executors.ts";
 import type { ExecutorType } from "./ExecutionResult.tsx";
 
 type ExecutorComponentProps = {
@@ -21,6 +25,8 @@ export function ExecutorComponent(
           return await executeGlueSQL(sql);
         case "SQLite":
           return await executeSqlite(sql);
+        case "Postgres":
+          return await executePostgres(sql);
         default:
           throw new Error(`Unknown executor: ${name}`);
       }
