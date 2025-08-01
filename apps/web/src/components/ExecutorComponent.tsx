@@ -4,6 +4,7 @@ import { SqlResultViewContainer } from "./SqlResultViewContainer.tsx";
 import { SqlResultView } from "./SqlResultView.tsx";
 import {
   executeGlueSQL,
+  executeMySQL,
   executePostgres,
   executeSqlite,
 } from "../executors.ts";
@@ -27,6 +28,8 @@ export function ExecutorComponent(
           return await executeSqlite(sql);
         case "Postgres":
           return await executePostgres(sql);
+        case "MySQL":
+          return await executeMySQL(sql);
         default:
           throw new Error(`Unknown executor: ${name}`);
       }
