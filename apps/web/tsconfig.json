@@ -7,6 +7,9 @@
     "types": ["vinxi/types/client"],
     "paths": {
       "~/*": ["./src/*"]
-    }
+    },
+    "lib": [
+      "dom"
+    ]
   }
 }

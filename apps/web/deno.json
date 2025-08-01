@@ -15,6 +15,9 @@
     "jsxImportSource": "solid-js",
     "allowJs": true,
     "strict": true,
-    "types": ["vinxi/types/client"]
+    "types": ["vinxi/types/client"],
+    "lib": [
+      "dom"
+    ]
   }
 }
