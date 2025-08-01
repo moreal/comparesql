@@ -6,7 +6,9 @@ engines.
 ## Commands
 
 ```bash
-deno task dev
+# Run SQLite, PostgreSQL, MySQL containers
+docker compose up
 
-deno task build
+# Run frontend server.
+deno task dev
 ```
