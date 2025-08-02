@@ -29,6 +29,7 @@ export function Form(props: FormProps) {
         placeholder="Enter SQL query... (Ctrl+Enter to submit)"
         style={{
           width: "80rem",
+          "max-width": "80vw",
           "font-family": "monospace",
           "font-size": "14px",
           resize: "vertical",
