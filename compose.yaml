@@ -10,7 +10,7 @@ services:
       MYSQL_PASSWORD: testpassword
 
   postgresql:
-    image: postgres:15
+    image: postgres:17
     container_name: comparesql_postgres
     restart: unless-stopped
     environment:
